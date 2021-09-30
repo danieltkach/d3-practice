@@ -6,6 +6,6 @@ export const Marks =({data,	xScale, yScale, xValue, yValue, tooltipFormat, circl
 			r={circleRadius}
 			key={xValue(d)+yValue(d)*Math.random()}
     >
-      <title>{tooltipFormat(xValue(d))}</title>
+      <title>{`Petal: ${tooltipFormat(xValue(d))} - Sepal: ${tooltipFormat(yValue(d))}`}</title>
     </circle>
   ));

@@ -7,7 +7,7 @@ import { Marks } from './Marks';
 
 const width = 960;
 const height = 500;
-const margin = { top: 20, right: 30, bottom: 65, left: 90 };
+const margin = { top: 20, right: 30, bottom: 85, left: 90 };
 const xAxisLabelOffset = 60;
 const yAxisLabelOffset = 45;
 

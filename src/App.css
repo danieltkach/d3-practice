@@ -6,3 +6,13 @@
 	justify-content: center;
 	flex-wrap: wrap;
 }
+
+.chartCard{
+	margin: 4rem;
+	padding: 2rem;
+	height: 70%;
+	border: 1px solid rgb(187, 187, 187);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

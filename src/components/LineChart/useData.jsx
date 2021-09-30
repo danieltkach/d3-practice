@@ -6,7 +6,8 @@ export const useData =(csvUrl)=> {
 
   useEffect(() => {
     const row = d => {
-      // d.Population = +d['2020'] * 1000;
+      d.temperature = +d.temperature;
+			d.timestamp = new Date(d.timestamp);
       return d;
     };
     csv(csvUrl, row).then(data => {

@@ -10,7 +10,7 @@ const csvUrl =
 
 const width = 960;
 const height = 500;
-const margin = { top: 20, right: 20, bottom: 100, left: 200 };
+const margin = { top: 20, right: 20, bottom: 100, left: 120 };
 
 export const BarChart = () => {
 	const data = useData(csvUrl);
@@ -23,7 +23,14 @@ export const BarChart = () => {
 	const innerWidth = width - margin.left - margin.right;
 
 	const xValue = d => d.Population;
-	const yValue = d => d.Country;
+	const maxChars = 16;
+	const yValue = d => {
+		if (d.Country.length > maxChars) {
+			debugger
+			d.Country = d.Country.slice(0,maxChars) + '...';
+		}
+		return d.Country;
+	};
 
 	const yScale = scaleBand()
 		.domain(data.map(yValue))
