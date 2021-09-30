@@ -6,7 +6,7 @@ export const App =()=> {
 
   return (
     <div className="App">
-      {/* <BarChart /> */}
+      <BarChart />
 			<ScatterPlot />
     </div>
   )

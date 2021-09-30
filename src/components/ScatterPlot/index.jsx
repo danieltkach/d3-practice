@@ -1,6 +1,5 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import { csv, scaleLinear, max, format, extent } from 'd3';
+import React from 'react';
+import { scaleLinear, format, extent, min, max } from 'd3';
 import { useData } from './useData';
 import { AxisBottom } from './AxisBottom';
 import { AxisLeft } from './AxisLeft';
@@ -9,12 +8,11 @@ import { Marks } from './Marks';
 const width = 960;
 const height = 500;
 const margin = { top: 20, right: 30, bottom: 65, left: 90 };
-const xAxisLabelOffset = 50;
+const xAxisLabelOffset = 60;
 const yAxisLabelOffset = 45;
 
 const csvUrl =
   'https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/639388c2cbc2120a14dcf466e85730eb8be498bb/iris.csv';
-
 
 export const ScatterPlot = () => {
   const data = useData(csvUrl);
@@ -33,10 +31,11 @@ export const ScatterPlot = () => {
   const yAxisLabel = 'Sepal Width';
 
   const siFormat = format('.2s');
-  const xAxisTickFormat = tickValue => siFormat(tickValue).replace('G', 'B');
+  const xAxisTickFormat = tickValue => siFormat(tickValue).replace('m', '');
 
   const xScale = scaleLinear()
-    .domain(extent(data, xValue))
+    // .domain(extent(data, xValue))
+		.domain([min(data, xValue)-0.5, max(data, xValue)])
     .range([0, innerWidth])
     .nice();
 
@@ -51,7 +50,7 @@ export const ScatterPlot = () => {
           xScale={xScale}
           innerHeight={innerHeight}
           tickFormat={xAxisTickFormat}
-          tickOffset={5}
+          tickOffset={9}
         />
         <text
           className="axis-label"

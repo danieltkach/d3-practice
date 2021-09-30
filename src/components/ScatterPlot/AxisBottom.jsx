@@ -1,4 +1,4 @@
-export const AxisBottom = ({ xScale, innerHeight, tickFormat, tickOffset = 3 }) =>
+export const AxisBottom = ({ xScale, innerHeight, tickFormat, tickOffset=3 }) =>
   xScale.ticks().map(tickValue => (
     <g
       className="tick"
