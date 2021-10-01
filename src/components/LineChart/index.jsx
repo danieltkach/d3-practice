@@ -1,5 +1,5 @@
 import React from 'react';
-import { scaleLinear, format, extent, min, max } from 'd3';
+import { scaleLinear, scaleTime, format, extent, min, max, timeFormat } from 'd3';
 import { useData } from './useData';
 import { AxisBottom } from './AxisBottom';
 import { AxisLeft } from './AxisLeft';
@@ -30,10 +30,9 @@ export const LineChart = () => {
   const yValue = d => d.temperature;
   const yAxisLabel = 'Temperature';
 
-  const siFormat = format('.2s');
-  const xAxisTickFormat = tickValue => siFormat(tickValue).replace('', '');
+  const xAxisTickFormat = timeFormat('%a');
 
-  const xScale = scaleLinear()
+  const xScale = scaleTime()
     // .domain(extent(data, xValue))
 		.domain([min(data, xValue)-0.5, max(data, xValue)])
     .range([0, innerWidth])

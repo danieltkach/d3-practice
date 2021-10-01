@@ -26,7 +26,6 @@ export const BarChart = () => {
 	const maxChars = 16;
 	const yValue = d => {
 		if (d.Country.length > maxChars) {
-			debugger
 			d.Country = d.Country.slice(0,maxChars) + '...';
 		}
 		return d.Country;
