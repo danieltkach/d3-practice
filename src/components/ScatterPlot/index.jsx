@@ -41,7 +41,7 @@ export const ScatterPlot = () => {
 
   const yScale = scaleLinear()
     .domain(extent(data, yValue))
-    .range([0, innerHeight]);
+    .range([0, innerHeight])	;
 
   return (
     <svg width={width} height={height}>

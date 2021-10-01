@@ -1,11 +1,10 @@
 import { line, curveNatural } from 'd3';
+import styles from './styles.module.scss';
 
 export const Marks = ({ data, xScale, yScale, xValue, yValue, tooltipFormat, circleRadius }) => {
 	return (
-		<>
+		<g className={styles.marks}>
 			<path
-				fill="none"
-				stroke="black"
 				d={
 					line()
 						.x(d => xScale(xValue(d)))
@@ -13,7 +12,7 @@ export const Marks = ({ data, xScale, yScale, xValue, yValue, tooltipFormat, cir
 						.curve(curveNatural)(data)
 				}
 			/>
-			{/* {
+			{
 				data.map(d => (
 					<circle className="mark"
 						cx={xScale(xValue(d))}
@@ -24,7 +23,7 @@ export const Marks = ({ data, xScale, yScale, xValue, yValue, tooltipFormat, cir
 						<title>{tooltipFormat(xValue(d))}</title>
 					</circle>
 				))
-			} */}
-		</>
+			}
+		</g>
 	)
 }
