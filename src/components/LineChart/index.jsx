@@ -4,6 +4,7 @@ import { useData } from './useData';
 import { AxisBottom } from './AxisBottom';
 import { AxisLeft } from './AxisLeft';
 import { Marks } from './Marks';
+import styles from './styles.module.scss';
 
 const width = 960;
 const height = 500;
@@ -53,7 +54,7 @@ export const LineChart = () => {
           tickOffset={9}
         />
         <text
-          className="axis-label"
+          className={styles.axisLabel}
           textAnchor="middle"
           transform={`translate(${-yAxisLabelOffset},${innerHeight /
             2}) rotate(-90)`}
@@ -62,7 +63,7 @@ export const LineChart = () => {
         </text>
         <AxisLeft yScale={yScale} innerWidth={innerWidth} tickOffset={5} />
         <text
-          className="axis-label"
+          className={styles.axisLabel}
           x={innerWidth / 2}
           y={innerHeight + xAxisLabelOffset}
           textAnchor="middle"

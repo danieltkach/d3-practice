@@ -1,16 +1,19 @@
 .marks{
 	path{
 		fill: none;
-		stroke:red;
+		stroke:#137b80;
 		stroke-width: 2;
 		stroke-linejoin: round;
 		stroke-linecap: round;
 
 	}
 	circle{
-		fill: orange;
+		fill: #2dec7d;
 		opacity: .5;
 	}
 }
 
-
+.axisLabel{
+	font-size: 2rem;
+	fill: #137b80
+}
