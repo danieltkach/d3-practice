@@ -18,6 +18,5 @@ export const useData =(jsonUl)=> {
     }); 
   }, []);
   
-	console.log(data);
   return data;
 }

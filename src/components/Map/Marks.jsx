@@ -15,8 +15,8 @@ export const Marks = ({ data: { countries, interiors } }) => {
 				d={path(graticule())}
 			/>
 			{
-				countries.features.map(feature => (
-					<path className={styles.country}
+				countries.features.map((feature, i) => (
+					<path key={i} className={styles.country}
 						d={path(feature)}
 					/>
 				))
