@@ -65,20 +65,20 @@ export const ScatterPlotDynamic = () => {
 	return (
 		<div className={styles.ScatterPlotDynamic}>
 			<div className={styles.menusPanel}>
-				<label>X-axis:
-					<DropDown
-						options={attributes}
-						id={'x-select'}
-						selectedValue={xAttribute}
-						onSelectedValueChange={setXAttribute}
-					/>
-				</label>
 				<label>Y-axis:
 					<DropDown
 						options={attributes}
 						id={'y-select'}
 						selectedValue={yAttribute}
 						onSelectedValueChange={setYAttribute}
+					/>
+				</label>
+				<label>X-axis:
+					<DropDown
+						options={attributes}
+						id={'x-select'}
+						selectedValue={xAttribute}
+						onSelectedValueChange={setXAttribute}
 					/>
 				</label>
 			</div>
