@@ -3,8 +3,10 @@ import { BarChart } from './components/BarChart'
 import { LineChart } from './components/LineChart'
 import { Map } from './components/Map/index';
 import { ScatterPlotDynamic } from './components/ScatterPlotDynamic';
+import { ForceGraph } from './components/ForceGraph/index';
 
 const CHARTS = [
+	<ForceGraph />,
 	<Map />,
 	<ScatterPlotDynamic />,
 	<LineChart />,
