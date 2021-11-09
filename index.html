@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<head>
+	<style>
+		/* simple reset */
+		html,
+		body,
+		div,
+		span,
+		applet,
+		object,
+		iframe,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		blockquote,
+		pre,
+		a,
+		abbr,
+		acronym,
+		address,
+		big,
+		cite,
+		code,
+		del,
+		dfn,
+		em,
+		img,
+		ins,
+		kbd,
+		q,
+		s,
+		samp,
+		small,
+		strike,
+		strong,
+		sub,
+		sup,
+		tt,
+		var,
+		b,
+		u,
+		i,
+		center,
+		dl,
+		dt,
+		dd,
+		ol,
+		ul,
+		li,
+		fieldset,
+		form,
+		label,
+		legend,
+		table,
+		caption,
+		tbody,
+		tfoot,
+		thead,
+		tr,
+		th,
+		td,
+		article,
+		aside,
+		canvas,
+		details,
+		embed,
+		figure,
+		figcaption,
+		footer,
+		header,
+		hgroup,
+		menu,
+		nav,
+		output,
+		ruby,
+		section,
+		summary,
+		time,
+		mark,
+		audio,
+		video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+	</style>
+
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+
+</head>
+
+<body>
+	<div id="viz"></div>
+	<script>
+		let margin = {
+			top: 30, right: 30, bottom: 30, left: 30
+		};
+		let fullWidth = 960,
+				fullHeight = 500;
+
+		let width = fullWidth - margin.left - margin.right,
+				height = fullHeight - margin.top - margin.bottom;
+
+		let canvasCenter = {
+			x: Math.round((margin.left+margin.right) / 2),
+			y: Math.round((margin.top+margin.bottom) / 2)
+		};
+
+		let svg = d3.select('#viz')
+			.append('svg')
+			.attr('width', fullWidth )
+			.attr('height', fullHeight)
+			.append('g')
+			.attr('transform', `translate(${canvasCenter.x}, ${canvasCenter.y})`)
+		
+
+	</script>
+</body>
+
+</html>
